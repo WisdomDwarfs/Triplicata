@@ -3,108 +3,70 @@ Triplicata Hash
 
 ###Code:###{
 
-package main
+	package main
 
-import(
-	Britannica "github.com/WisdomDwarfs/Britannica/BritannicaMathematica"
-	codex "github.com/WisdomDwarfs/Triplicata/Mathematica"
-	"github.com/WisdomDwarfs/Triplicata/Model"
-	"fmt"
-	// "reflect"
-	// "strings"
-)
-var ( 
-	fileOp Britannica.FileOperations = Britannica.NewInstance()
-	Alice Britannica.CodexBritannica = Britannica.NewVault()
-	Codex codex.MathematicaAbstract = codex.Init() 
-   )
+	import(
+		Britannica "github.com/WisdomDwarfs/Britannica/BritannicaMathematica"
+		codex "github.com/WisdomDwarfs/Triplicata/Mathematica"
+		"github.com/WisdomDwarfs/Triplicata/Model"
+		"fmt"
+		// "reflect"
+		// "strings"
+	)
+	var ( 
+		fileOp Britannica.FileOperations = Britannica.NewInstance()
+		Alice Britannica.CodexBritannica = Britannica.NewVault()
+		Codex codex.MathematicaAbstract = codex.Init() 
+   	)
 
-func main() {
+	func main() {
 
-	file, err := fileOp.FileExist("iqbal"); if err != nil { 
-		fmt.Println("Error", err) 
-		return 
-	} 
+		file, err := fileOp.FileExist("iqbal"); if err != nil { 
+			fmt.Println("Error", err) 
+			return 
+		} 
 	
-	fmt.Println(file) 
-	f, err , hash := Alice.CodexMathematica(file); if err != nil { 
-		fmt.Println("Error", err) 
-		return 
-	}
-	fmt.Println("File:", f)
-	
-	dynamo := make([]*Model.Abstract, len(hash)-1)
-	// easy way to solve problem
-	 for i, _ := range hash {
-		s1 := Codex.CreateTriplicata(hash[i])
-		code := Codex.ReduceSizeOf(s1); if code != nil{
-			dynamo = append(dynamo,code)
+		fmt.Println(file) 
+		f, err , hash := Alice.CodexMathematica(file); if err != nil { 
+			fmt.Println("Error", err) 
+			return 
 		}
-	 }
-	 MoveLikeTurning(dynamo)
+		fmt.Println("File:", f)
+	
+		dynamo := make([]*Model.Abstract, len(hash)-1)
+		// easy way to solve problem
+		 for i, _ := range hash {
+			s1 := Codex.CreateTriplicata(hash[i])
+				code := Codex.ReduceSizeOf(s1); if code != nil{
+				dynamo = append(dynamo,code)
+			}
+	 	}
+	 	MoveLikeTurning(dynamo)
 
 	 
-	 
-  }
+  	}
 
 
- func MoveLikeTurning(str []*Model.Abstract){
-	 //s := make([]*Model.Abstract, len(str)-1)
- 	if len(str)> 0 {
- 		for i:=0; i < len(str)-1;i++ {
-			state := Codex.Nil(str[i]); if !state{
-				a := Codex.Value(str[i])
-				b := Codex.Value(str[i+1])
-				h := Codex.HashTriplicata(a,b)
-				fmt.Println(h)
+	 func MoveLikeTurning(str []*Model.Abstract){
+		 //s := make([]*Model.Abstract, len(str)-1)
+ 		if len(str)> 0 {
+ 			for i:=0; i < len(str)-1;i++ {
+					state := Codex.Nil(str[i]); if !state{
+						a := Codex.Value(str[i])
+						b := Codex.Value(str[i+1])
+						h := Codex.HashTriplicata(a,b)
+						fmt.Println(h)
 				
-			 }
-			// block := Codex.BlocksinLevel(str[i])
+			 		}
+				// block := Codex.BlocksinLevel(str[i])
 			
     		      }
 		 }
  	}
  }
  ### OUTPUT[@:]
- &{010d010d010d010d010d0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3319 true 1}
-&{005f005f005f005f005f0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3320 true 1}
-&{000300030003000300030000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3321 true 1}
-&{060406040604060406040000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3322 true 1}
-&{055505550555055505550000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3323 true 1}
-&{030c030c030c030c030c0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3324 true 1}
-&{000d000d000d000d000d0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3325 true 1}
-&{040504050405040504050000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3326 true 1}
-&{050405040504050405040000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3327 true 1}
-&{010c010c010c010c010c0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3328 true 1}
-&{010a010a010a010a010a0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3329 true 1}
-&{015401540154015401540000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3330 true 1}
-&{000300030003000300030000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3331 true 1}
-&{005000500050005000500000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3332 true 1}
-&{040504050405040504050000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3333 true 1}
-&{045604560456045604560000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3334 true 1}
-&{005000500050005000500000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3335 true 1}
-&{040604060406040604060000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3336 true 1}
-&{050405040504050405040000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3337 true 1}
-&{010c010c010c010c010c0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3338 true 1}
-&{000d000d000d000d000d0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3339 true 1}
-&{040504050405040504050000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3340 true 1}
-&{060706070607060706070000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3341 true 1}
-&{025102510251025102510000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3342 true 1}
-&{005200520052005200520000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3343 true 1}
-&{040404040404040404040000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3344 true 1}
-&{045604560456045604560000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3345 true 1}
-&{005000500050005000500000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3346 true 1}
-&{040604060406040604060000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3347 true 1}
-&{065406540654065406540000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3348 true 1}
-&{025502550255025502550000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3349 true 1}
-&{005000500050005000500000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3350 true 1}
-&{005400540054005400540000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3351 true 1}
-&{010601060106010601060000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3352 true 1}
-&{000700070007000700070000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3353 true 1}
-&{000d000d000d000d000d0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3354 true 1}
-&{050905090509050905090000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3355 true 1}
-&{060906090609060906090000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3356 true 1}
-&{060906090609060906090000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3357 true 1}
-&{040104010401040104010000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3358 true 1}
-&{005500550055005500550000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3359 true 1}
- 
+		 &{010d010d010d010d010d0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3319 true 1}
+		 &{005f005f005f005f005f0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3320 true 1}
+		&{000300030003000300030000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3321 true 1}
+		&{060406040604060406040000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 3322 true 1}
+
